@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'package:path/path.dart' as p;
-import '../lib/src/method_info.dart';
 import '../lib/src/project_scanner.dart';
 import '../lib/src/code_injector.dart';
 import '../lib/src/cli_interface.dart';

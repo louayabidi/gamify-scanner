@@ -1,6 +1,5 @@
 import 'dart:io';
 import 'dart:convert';
-import 'package:path/path.dart' as p;
 import 'project_scanner.dart';
 import 'code_injector.dart';
 import 'method_info.dart';
