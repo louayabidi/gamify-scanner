@@ -85,23 +85,30 @@ class CodeInjector {
   }
 
   Future<void> _injectFile(
-      String filePath, List<MethodInfo> methods) async {
-    var src = File(filePath).readAsStringSync();
-    const imp =
-        "import 'package:gamification_flutter_sdk/gamification_flutter_sdk.dart';\n";
-    if (!src.contains('gamification_flutter_sdk')) src = imp + src;
+    String filePath, List<MethodInfo> methods) async {
+  var src = File(filePath).readAsStringSync();
 
-    final sorted = [...methods]
-      ..sort((a, b) => b.bodyOffset.compareTo(a.bodyOffset));
+  // ✅ Trier par offset DÉCROISSANT
+  final sorted = [...methods]
+    ..sort((a, b) => b.bodyOffset.compareTo(a.bodyOffset));
 
-    for (final m in sorted) {
-      final trackCode =
-          '\n    // 🎮 auto-injecté\n    GamifTracker.track(\'${m.name}\');\n';
-      final pos = m.bodyOffset + 1;
-      src = src.substring(0, pos) + trackCode + src.substring(pos);
-    }
-    File(filePath).writeAsStringSync(src);
+  // ✅ Injecter D'ABORD — avant d'ajouter l'import
+  for (final m in sorted) {
+    final trackCode =
+        '\n    // 🎮 auto-injecté\n    print(\'[GamifTracker] ${m.name} tracked\');\n';
+    final pos = m.bodyOffset + 1;
+    src = src.substring(0, pos) + trackCode + src.substring(pos);
   }
+
+  // ✅ Ajouter l'import APRÈS l'injection
+  const imp =
+      "import 'package:gamification_flutter_sdk/gamification_flutter_sdk.dart';\n";
+  if (!src.contains('gamification_flutter_sdk')) {
+    src = imp + src;
+  }
+
+  File(filePath).writeAsStringSync(src);
+}
 
   Future<void> _saveConfig(
       List<MethodInfo> methods, String apiKey) async {
