@@ -137,7 +137,7 @@ Future<void> _registerEventsToBackend(
   try {
     final client = HttpClient();
     final uri = Uri.parse(
-      'https://ton-backend.com/api/events/register'
+       'http://localhost:8081/api/events/register' 
       // ⚠️ remplace par ton vrai URL backend
     );
 
