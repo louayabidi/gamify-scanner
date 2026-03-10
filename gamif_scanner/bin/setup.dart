@@ -1,9 +1,6 @@
 import 'dart:io';
 import 'package:path/path.dart' as p;
-import '../lib/src/project_scanner.dart';
-import '../lib/src/code_injector.dart';
-import '../lib/src/cli_interface.dart';
-import '../lib/src/web_ui_server.dart';
+import 'package:gamif_scanner/gamif_scanner.dart';
 
 void main(List<String> args) async {
   final projectPath =
