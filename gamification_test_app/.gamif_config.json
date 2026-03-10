@@ -1,0 +1,11 @@
+{
+  "apiKey": "gam_VrVe0Q5wIdv3-urbl-YhGhf9OixThbgwYAMvgRD1xvg",
+  "injectedAt": "2026-03-08T01:33:40.749648",
+  "methods": [
+    {
+      "name": "completeLevel",
+      "class": "GameService",
+      "file": "lib\\features\\game\\game_service.dart"
+    }
+  ]
+}
