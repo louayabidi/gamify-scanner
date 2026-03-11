@@ -1,11 +1,16 @@
 {
-  "apiKey": "gam_VrVe0Q5wIdv3-urbl-YhGhf9OixThbgwYAMvgRD1xvg",
-  "injectedAt": "2026-03-08T01:33:40.749648",
+  "apiKey": "gam_7H745a0HUB5eEbLnZzjJZlz56EJjLcqA2-kaySA-IeQ",
+  "injectedAt": "2026-03-11T01:30:35.079759",
   "methods": [
     {
-      "name": "completeLevel",
-      "class": "GameService",
-      "file": "lib\\features\\game\\game_service.dart"
+      "name": "get",
+      "class": "ApiClient",
+      "file": "lib\\core\\api_client.dart"
+    },
+    {
+      "name": "post",
+      "class": "ApiClient",
+      "file": "lib\\core\\api_client.dart"
     }
   ]
 }

@@ -66,7 +66,7 @@ class CodeInjector {
         'void main() async async {', 'void main() async {');
 
     final initCode =
-        '\n  // 🎮 Gamification SDK\n  await GamifSDK.init(apiKey: \'$apiKey\');\n';
+    '\n  // 🎮 Gamification SDK\n  await GamifSDK.init(apiKey: \'$apiKey\', baseUrl: \'http://localhost:8081\');\n';
 
     if (src.contains('WidgetsFlutterBinding.ensureInitialized();')) {
       src = src.replaceFirst(
@@ -94,8 +94,9 @@ class CodeInjector {
 
   // ✅ Injecter D'ABORD — avant d'ajouter l'import
   for (final m in sorted) {
-    final trackCode =
-        '\n    // 🎮 auto-injecté\n    print(\'[GamifTracker] ${m.name} tracked\');\n';
+   final trackCode = m.isAsync
+    ? '\n    // 🎮 auto-injecté\n    await GamifTracker.track(\'${m.name}\');\n'
+    : '\n    // 🎮 auto-injecté\n    GamifTracker.track(\'${m.name}\');\n';
     final pos = m.bodyOffset + 1;
     src = src.substring(0, pos) + trackCode + src.substring(pos);
   }

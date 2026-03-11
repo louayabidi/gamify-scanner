@@ -7,7 +7,7 @@ import 'features/shop/shop_service.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // 🎮 Gamification SDK
-  await GamifSDK.init(apiKey: 'gam_VrVe0Q5wIdv3-urbl-YhGhf9OixThbgwYAMvgRD1xvg');
+  await GamifSDK.init(apiKey: 'gam_7H745a0HUB5eEbLnZzjJZlz56EJjLcqA2-kaySA-IeQ');
 
   runApp(const MyApp());
 }

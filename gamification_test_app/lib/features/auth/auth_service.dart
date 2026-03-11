@@ -1,7 +1,11 @@
+import 'package:gamification_flutter_sdk/gamification_flutter_sdk.dart';
 class AuthService {
   String? _currentUser;
 
   Future<bool> login(String email, String password) async {
+    // 🎮 auto-injecté
+      await GamifTracker.track('login');
+
     await Future.delayed(const Duration(milliseconds: 500));
     _currentUser = email;
     print('✅ Logged in: $email');
