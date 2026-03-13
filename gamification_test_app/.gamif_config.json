@@ -1,6 +1,6 @@
 {
-  "apiKey": "gam_7H745a0HUB5eEbLnZzjJZlz56EJjLcqA2-kaySA-IeQ",
-  "injectedAt": "2026-03-11T01:30:35.079759",
+  "apiKey": "gam_kH_ZOuiS6G5awBGV_YV5-jgubAwL7bSgxdrbH_5Gqq8",
+  "injectedAt": "2026-03-13T04:09:09.598912",
   "methods": [
     {
       "name": "get",
@@ -11,6 +11,61 @@
       "name": "post",
       "class": "ApiClient",
       "file": "lib\\core\\api_client.dart"
+    },
+    {
+      "name": "login",
+      "class": "AuthService",
+      "file": "lib\\features\\auth\\auth_service.dart"
+    },
+    {
+      "name": "logout",
+      "class": "AuthService",
+      "file": "lib\\features\\auth\\auth_service.dart"
+    },
+    {
+      "name": "register",
+      "class": "AuthService",
+      "file": "lib\\features\\auth\\auth_service.dart"
+    },
+    {
+      "name": "loadPlayerProfile",
+      "class": "GameService",
+      "file": "lib\\features\\game\\game_service.dart"
+    },
+    {
+      "name": "completeLevel",
+      "class": "GameService",
+      "file": "lib\\features\\game\\game_service.dart"
+    },
+    {
+      "name": "startMission",
+      "class": "GameService",
+      "file": "lib\\features\\game\\game_service.dart"
+    },
+    {
+      "name": "completeMission",
+      "class": "GameService",
+      "file": "lib\\features\\game\\game_service.dart"
+    },
+    {
+      "name": "earnPoints",
+      "class": "GameService",
+      "file": "lib\\features\\game\\game_service.dart"
+    },
+    {
+      "name": "purchaseItem",
+      "class": "ShopService",
+      "file": "lib\\features\\shop\\shop_service.dart"
+    },
+    {
+      "name": "sellItem",
+      "class": "ShopService",
+      "file": "lib\\features\\shop\\shop_service.dart"
+    },
+    {
+      "name": "openLootBox",
+      "class": "ShopService",
+      "file": "lib\\features\\shop\\shop_service.dart"
     }
   ]
 }

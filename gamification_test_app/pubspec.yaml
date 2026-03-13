@@ -7,7 +7,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  gamification_flutter_sdk: ^1.0.0
+  gamification_flutter_sdk:
+    path: C:\Users\louay\Desktop\pfe_final\projet\sdk\gamification_flutter_sdk
 dev_dependencies:
   flutter_test:
     sdk: flutter

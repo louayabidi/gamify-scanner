@@ -91,11 +91,10 @@ packages:
   gamification_flutter_sdk:
     dependency: "direct main"
     description:
-      name: gamification_flutter_sdk
-      sha256: "2736ce7c03f80de80f4b75c935d26ec8bc9edf5480dd072978ff3eb0b2afa525"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
+      path: "C:\\Users\\louay\\Desktop\\pfe_final\\projet\\sdk\\gamification_flutter_sdk"
+      relative: false
+    source: path
+    version: "1.0.1"
   http:
     dependency: transitive
     description:

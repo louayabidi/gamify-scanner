@@ -9,6 +9,12 @@ class ShopService {
     print('[GamifTracker] purchaseItem tracked');
 
     // 🎮 auto-injecté
+    print('[GamifTracker] purchaseItem tracked');
+
+    // 🎮 auto-injecté
+    print('[GamifTracker] purchaseItem tracked');
+
+    // 🎮 auto-injecté
     GamifTracker.track('purchaseItem');
     await Future.delayed(const Duration(milliseconds: 400));
     if (_balance < price) return false;
@@ -20,6 +26,12 @@ class ShopService {
 
   Future<int> sellItem(String itemId, int sellPrice) async {
     // 🎮 auto-injecté
+    print('[GamifTracker] sellItem tracked');
+
+    // 🎮 auto-injecté
+    print('[GamifTracker] sellItem tracked');
+
+    // 🎮 auto-injecté
     GamifTracker.track('sellItem');
     _balance += sellPrice;
     _inventory.remove(itemId);
@@ -28,6 +40,12 @@ class ShopService {
   }
 
   Future<List<String>> openLootBox(String lootBoxId) async {
+    // 🎮 auto-injecté
+    print('[GamifTracker] openLootBox tracked');
+
+    // 🎮 auto-injecté
+    print('[GamifTracker] openLootBox tracked');
+
     // 🎮 auto-injecté
     GamifTracker.track('openLootBox');
     await Future.delayed(const Duration(seconds: 1));
