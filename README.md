@@ -189,11 +189,6 @@ A: This package is just the scanner. The SDK itself is a separate package (comin
 
 ---
 
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
 
 ## 🚀 What's next?
 
