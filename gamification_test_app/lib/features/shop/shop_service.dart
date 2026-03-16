@@ -5,17 +5,7 @@ class ShopService {
   final Map<String, int> _inventory = {};
 
   Future<bool> purchaseItem(String itemId, int price) async {
-    // 🎮 auto-injecté
-    print('[GamifTracker] purchaseItem tracked');
-
-    // 🎮 auto-injecté
-    print('[GamifTracker] purchaseItem tracked');
-
-    // 🎮 auto-injecté
-    print('[GamifTracker] purchaseItem tracked');
-
-    // 🎮 auto-injecté
-    GamifTracker.track('purchaseItem');
+   
     await Future.delayed(const Duration(milliseconds: 400));
     if (_balance < price) return false;
     _balance -= price;
@@ -25,6 +15,9 @@ class ShopService {
   }
 
   Future<int> sellItem(String itemId, int sellPrice) async {
+    // 🎮 auto-injecté
+    await GamifTracker.track('sellItem');
+
     // 🎮 auto-injecté
     print('[GamifTracker] sellItem tracked');
 
