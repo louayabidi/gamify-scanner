@@ -2,7 +2,9 @@ import 'dart:io';
 import 'package:path/path.dart' as p;
 import 'method_info.dart';
 
+/// Interactive command-line interface for method selection and injection.
 class CliInterface {
+  /// Displays detected methods and lets the user select which ones to track.
   Future<List<MethodInfo>> selectMethods(
     List<MethodInfo> allMethods,
     String projectPath,
@@ -53,12 +55,14 @@ class CliInterface {
     return nums.map((n) => indexed[n]).whereType<MethodInfo>().toList();
   }
 
+/// Prompts the user to enter their Gamify API key.
   Future<String> askApiKey() async {
     print('');
     stdout.write('  🔑 Clé API > ');
     return stdin.readLineSync()?.trim() ?? '';
   }
 
+/// Asks the user to confirm before proceeding with injection.
   Future<bool> confirmInjection(List<MethodInfo> methods) async {
     print('');
     print('  📋 Récapitulatif :');

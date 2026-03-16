@@ -86,6 +86,8 @@ void main(List<String> args) async {
   print('  ║        ✅  Setup Terminé !           ║');
   print('  ╚══════════════════════════════════════╝');
   print('  ${result.injectedCount} injection(s) réussie(s)');
-  for (final e in result.errors) print(e);
+  for (final e in result.errors) {
+  print(e);
+}
   print('');
 }

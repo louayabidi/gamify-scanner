@@ -1,6 +1,7 @@
 # gamif_scanner
 
-Auto-scanner and code injector for the Gamification Flutter SDK.
+A Dart CLI tool that scans Flutter projects using AST analysis, detects
+all Dart methods, and injects gamification tracking code automatically.
 
 ## Installation
 ```sh
@@ -11,22 +12,24 @@ dart pub global activate gamif_scanner
 
 Run from your Flutter project root:
 ```sh
-dart pub global run gamif_scanner
+dart pub global run gamif_scanner:setup .
 ```
 
 Or target a specific project:
 ```sh
-dart pub global run gamif_scanner /path/to/flutter/project
+dart pub global run gamif_scanner:setup /path/to/flutter/project
 ```
 
 ## What it does
 
-1. Scans all Dart files in your Flutter project
+1. Scans all Dart files using AST analysis
 2. Detects all methods automatically
-3. You choose which methods to track
-4. Injects SDK tracking code automatically
+3. You choose which methods to track (CLI or Web UI)
+4. Injects `GamifTracker.track()` into selected methods
+5. Sends registered events to your Gamify dashboard
 
 ## Requirements
 
 - Dart SDK >= 3.0.0
 - A Flutter project with a `lib/` folder
+- A Gamify API key from your dashboard
