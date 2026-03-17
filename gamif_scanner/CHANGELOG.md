@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.6
+## 1.0.7
 
 - Fix: update analyzer to ^7.0.0
 - Fix: wrap for-loop body in braces (lint)
