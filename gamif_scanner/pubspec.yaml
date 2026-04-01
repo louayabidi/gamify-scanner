@@ -2,7 +2,7 @@ name: gamif_scanner
 description: >-
   A Dart CLI tool that scans Flutter projects using AST analysis, detects all
   Dart methods automatically.
-version: 1.0.7
+version: 1.0.8
 homepage: https://github.com/louayabidi/gamify-scanner   
 repository: https://github.com/louayabidi/gamify-scanner
 

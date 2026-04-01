@@ -6,8 +6,10 @@ import 'features/shop/shop_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // 🎮 Gamification SDK
-  await GamifSDK.init(apiKey: 'gam_kH_ZOuiS6G5awBGV_YV5-jgubAwL7bSgxdrbH_5Gqq8');
+  await GamifSDK.init(
+    apiKey: 'gam_kH_ZOuiS6G5awBGV_YV5-jgubAwL7bSgxdrbH_5Gqq8',
+    baseUrl: 'http://localhost:8081',
+  );
   await GamificationSDK.instance.identify('user_123');
   print('✅ SDK initialisé et user identifié');
   runApp(const MyApp());
@@ -45,7 +47,19 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('🎮 Game App')),
+      appBar: AppBar(
+        title: const Text('🎮 Game App'),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: GamifPointsWidget(          // ✅ ici c'est correct
+              backgroundColor: Colors.purple,
+              label: 'pts',
+              showLifetime: true,
+            ),
+          ),
+        ],
+      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -68,6 +82,22 @@ class _HomeScreenState extends State<HomeScreen> {
             ElevatedButton(
               onPressed: () => _game.startMission('mission_dragon'),
               child: const Text('Start Mission'),
+            ),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: () async {
+                await _game.enableSpecialAction();
+                setState(() {});
+              },
+              child: const Text('🔓 Activer action spéciale'),
+            ),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: () async {
+                await _game.performSpecialAction();
+                setState(() {});
+              },
+              child: const Text('✨ Action spéciale (validée)'),
             ),
           ],
         ),

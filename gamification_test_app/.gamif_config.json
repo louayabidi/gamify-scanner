@@ -1,31 +1,11 @@
 {
   "apiKey": "gam_kH_ZOuiS6G5awBGV_YV5-jgubAwL7bSgxdrbH_5Gqq8",
-  "injectedAt": "2026-03-16T05:03:20.058028",
+  "injectedAt": "2026-04-01T22:54:03.904343",
   "methods": [
     {
-      "name": "login",
-      "class": "AuthService",
-      "file": "lib\\features\\auth\\auth_service.dart"
-    },
-    {
-      "name": "register",
-      "class": "AuthService",
-      "file": "lib\\features\\auth\\auth_service.dart"
-    },
-    {
-      "name": "completeLevel",
+      "name": "performSpecialAction",
       "class": "GameService",
       "file": "lib\\features\\game\\game_service.dart"
-    },
-    {
-      "name": "startMission",
-      "class": "GameService",
-      "file": "lib\\features\\game\\game_service.dart"
-    },
-    {
-      "name": "sellItem",
-      "class": "ShopService",
-      "file": "lib\\features\\shop\\shop_service.dart"
     }
   ]
 }
