@@ -10,7 +10,7 @@ void main() async {
     apiKey: 'gam_kH_ZOuiS6G5awBGV_YV5-jgubAwL7bSgxdrbH_5Gqq8',
     baseUrl: 'http://localhost:8081',
   );
-  await GamificationSDK.instance.identify('user_123');
+  await GamificationSDK.instance.identify('user_127');
   print('✅ SDK initialisé et user identifié');
   runApp(const MyApp());
 }
@@ -67,6 +67,19 @@ class _HomeScreenState extends State<HomeScreen> {
             ElevatedButton(
               onPressed: () => _auth.login('user@test.com', 'pass123'),
               child: const Text('Login'),
+            ),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: () {
+                _auth.printWelcomeMessage();
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('✅ Message affiché dans la console'),
+                    duration: Duration(seconds: 2),
+                  ),
+                );
+              },
+              child: const Text('📋 Message Bienvenue'),
             ),
             const SizedBox(height: 12),
             ElevatedButton(
